@@ -125,6 +125,12 @@ func ShowAppHelp(c *Context) {
 	}
 }
 
+// ShowAppHelpAndExit - Prints the list of subcommands for the app and exits with exit code.
+func ShowAppHelpAndExit(c *Context, exitCode int) {
+	ShowAppHelp(c)
+	os.Exit(exitCode)
+}
+
 // DefaultAppComplete - Prints the list of subcommands as the default app completion method
 func DefaultAppComplete(c *Context) {
 	for _, command := range c.App.Commands {
